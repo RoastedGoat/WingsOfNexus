@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #1a1a2e;
+    color: #eaeaea;
+}
+header {
+    background: #16213e;
+    padding: 20px;
+    text-align: center;
+}
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+nav a {
+    color: #eaeaea;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2em;
+}
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: url('hero-image.jpg') no-repeat center center/cover;
+    color: #fff;
+}
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+.hero p {
+    font-size: 1.2em;
+}
+.features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.feature {
+    background: #0f3460;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+}
+.feature h3 {
+    margin-top: 0;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #16213e;
+    color: #eaeaea;
+}
+html, body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+footer {
+    margin-top: auto;
+}
+a {
+    color: #00aaff;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ffaa00;
+    text-decoration: none;
+}
+/* From Uiverse.io by Creatlydev */ 
+.button {
+  line-height: 1;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+  padding: 0.75em 1em;
+  padding-right: 1.25em;
+  color: #fff;
+  border: 1px solid transparent;
+  font-weight: 700;
+  border-radius: 2em;
+  font-size: 1rem;
+  box-shadow: 0 0.7em 1.5em -0.5em hsla(249, 62%, 51%, 0.745);
+  transition: transform 0.3s;
+
+  background: linear-gradient(
+    90deg,
+    rgba(77, 54, 208, 1) 0%,
+    rgba(132, 116, 254, 1) 100%
+  );
+}
+
+.button__icon {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.button:hover {
+  border-color: #f4f5f2;
+}
+
+.button:active {
+  transform: scale(0.98);
+  box-shadow: 0 0.5em 1.5em -0.5em hsla(249, 62%, 51%, 0.745);
+}
