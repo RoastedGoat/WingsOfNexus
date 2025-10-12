@@ -138,3 +138,25 @@ a:hover {
     background-position: right bottom;
   }
 }
+/* Center everything on the 404 page */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* pushes button down */
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+.container h1 {
+    font-size: 8rem;
+    margin: 0;
+    color: #eaeaea;
+}
+
+.container p {
+    font-size: 1.2rem;
+    color: #ccc;
+}
