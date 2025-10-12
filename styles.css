@@ -66,3 +66,13 @@ body {
 footer {
     margin-top: auto;
 }
+a {
+    color: #00aaff;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ffaa00;
+    text-decoration: none;
+}
