@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="feedback-form.css">
+</head>
+<body>
+    <header>
+        <h1>Wings of Nexus - Contact</h1>
+        <nav>
+            <a href="../">Home</a>
+            <a href="../download/">Download</a>
+            <a href="">Contact</a>
+        </nav>
+    </header>
+    <div class="feedback-container">
+        <form class="feedback-form" action="https://formspree.io/f/mkgqpoey" method="POST">
+            <h1>Feedback Form</h1>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your email" required>
+
+            <label>Feedback Type:</label>
+            <div class="radio-group">
+                <label><input type="radio" name="feedback-type" value="bug" required> Bug Report</label>
+                <label><input type="radio" name="feedback-type" value="feature"> Feature Request</label>
+            </div>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" placeholder="Describe your feedback" required></textarea>
+
+            <button type="submit" class="submit-button">Send Feedback</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -160,3 +160,79 @@ a:hover {
     font-size: 1.2rem;
     color: #ccc;
 }
+/* Feedback Form Styles */
+/* Feedback Form Styles */
+.feedback-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.feedback-form {
+    background: #0f3460;
+    padding: 30px; /* consistent spacing from edges */
+    border-radius: 12px;
+    width: 400px;
+    box-sizing: border-box; /* includes padding in width */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.feedback-form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #eaeaea;
+}
+
+.feedback-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #eaeaea;
+}
+
+.feedback-form input[type="email"],
+.feedback-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; /* makes width consistent */
+}
+
+.feedback-form textarea {
+    resize: vertical;
+}
+
+.feedback-form .radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* consistent spacing between radio buttons */
+    margin-bottom: 15px;
+}
+
+.feedback-form .radio-group label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    color: #eaeaea;
+}
+
+.feedback-form .radio-group input {
+    margin-right: 10px;
+}
+
+.feedback-form .submit-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(to bottom, #1b1c3f, #4a4e91);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
