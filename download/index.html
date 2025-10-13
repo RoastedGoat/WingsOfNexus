@@ -3,52 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Downloads - Wings of Nexus</title>
+    <title>Wings of Nexus - Download</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
     <header>
-        <h1>Wings of Nexus - Download</h1>
+        <h1>Wings of Nexus</h1>
         <nav>
             <a href="../">Home</a>
             <a href="">Download</a>
             <a href="../contact/">Contact</a>
         </nav>
     </header>
-    <main>
-        <section>
-            <h2>Available Downloads</h2>
-            <p>Here you can find all the available downloads for Wings of Nexus.</p>
-            <hr>
-            <!-- From Uiverse.io by Creatlydev --> 
-            <a href="../files/downloads/WingsOfNexus.exe" download class="button" style="display: inline-flex; align-items: center; justify-content: center; padding: 10px 20px; text-decoration: none; background-color: #007BFF; color: white; border-radius: 5px; width: auto;">
-                <svg
-                    stroke-linejoin="round"
-                    stroke-linecap="round"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    viewBox="0 0 24 24"
-                    height="40"
-                    width="40"
-                    class="button__icon"
-                >
-                    <path fill="none" d="M0 0h24v24H0z" stroke="none"></path>
-                    <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
-                    <path d="M7 11l5 5l5 -5"></path>
-                    <path d="M12 4l0 12"></path>
-                </svg>
-                <span class="button__text" style="margin-left: 10px;">Download Beta (Windows)</span>
-            </a>
-        </section>
-    </main>
+
+    <section class="download-section">
+        <h2>Download</h2>
+        <label for="version-select">Select a version:</label>
+        <select id="version-select">
+            <option value="../files/downloads/WingsOfNexus.exe">Legacy Version</option>
+            <option value="../files/downloads/WingsOfNexusV2.exe">Version 2</option>
+            <!-- Add more versions as needed -->
+        </select>
+        <a id="download-button" href="download/legacy/" class="button">
+            Download Legacy Version
+        </a>
+    </section>
+
     <footer>
-        <p>not copyrighted but pls dont mess with it</p>
+        <p>Uncopyrighted — please respect the content.</p>
     </footer>
+
+    <script>
+        const select = document.getElementById('version-select');
+        const button = document.getElementById('download-button');
+
+        select.addEventListener('change', () => {
+            const selectedOption = select.options[select.selectedIndex];
+            button.href = selectedOption.value;
+            button.textContent = 'Download ' + selectedOption.text;
+        });
+    </script>
 </body>
 </html>

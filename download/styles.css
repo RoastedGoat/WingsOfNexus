@@ -4,41 +4,57 @@ body {
     padding: 0;
     background: #1a1a2e;
     color: #eaeaea;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
+
 header {
     background: #16213e;
     padding: 20px;
     text-align: center;
 }
+
 header h1 {
     margin: 0;
     font-size: 2.5em;
 }
+
 nav a {
     color: #eaeaea;
     text-decoration: none;
     margin: 0 15px;
     font-size: 1.2em;
 }
+
+nav a:hover {
+    color: #ffaa00;
+    text-decoration: none;
+}
+
 .hero {
     text-align: center;
     padding: 50px 20px;
     background: url('hero-image.jpg') no-repeat center center/cover;
     color: #fff;
 }
+
 .hero h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
 }
+
 .hero p {
     font-size: 1.2em;
 }
+
 .features {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     padding: 20px;
 }
+
 .feature {
     background: #0f3460;
     margin: 10px;
@@ -47,25 +63,48 @@ nav a {
     width: 300px;
     text-align: center;
 }
+
 .feature h3 {
     margin-top: 0;
 }
+
+.download-section {
+    text-align: center; /* centers <h2> and <label> text */
+    padding: 40px 20px; /* matches your padding vibe */
+    flex-grow: 1; /* takes up space in flex layout */
+    display: flex; /* ensures vertical stacking */
+    flex-direction: column; /* stacks children vertically */
+    align-items: center; /* centers children horizontally */
+    justify-content: center; /* centers content vertically if space allows */
+}
+
+.download-section h2 {
+    margin: 0 0 15px 0; /* ensures spacing below h2 */
+}
+
+.download-section label {
+    display: block; /* ensures label is on its own line */
+    margin-bottom: 10px; /* adds space below label */
+}
+
+.download-section select {
+    margin: 0 0 30px 0; /* more space below select for clear separation */
+    padding: 5px;
+    background: #0f3460; /* matches your dark theme */
+    color: #eaeaea;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    width: 200px; /* consistent width for alignment */
+}
+
 footer {
     text-align: center;
     padding: 10px;
     background: #16213e;
     color: #eaeaea;
-}
-html, body {
-    height: 100%;
-}
-body {
-    display: flex;
-    flex-direction: column;
-}
-footer {
     margin-top: auto;
 }
+
 a {
     color: #00aaff;
     text-decoration: underline;
@@ -76,41 +115,47 @@ a:hover {
     color: #ffaa00;
     text-decoration: none;
 }
-/* From Uiverse.io by Creatlydev */ 
-.button {
-  line-height: 1;
-  background-color: transparent;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.35em;
-  padding: 0.75em 1em;
-  padding-right: 1.25em;
-  color: #fff;
-  border: 1px solid transparent;
-  font-weight: 700;
-  border-radius: 2em;
-  font-size: 1rem;
-  box-shadow: 0 0.7em 1.5em -0.5em hsla(249, 62%, 51%, 0.745);
-  transition: transform 0.3s;
 
-  background: linear-gradient(
-    90deg,
-    rgba(77, 54, 208, 1) 0%,
-    rgba(132, 116, 254, 1) 100%
-  );
+/* From Uiverse.io by Creatlydev */
+.button {
+    line-height: 1;
+    background-color: transparent;
+    cursor: pointer;
+    display: inline-flex; /* prevents stretching */
+    align-items: center;
+    justify-content: center; /* centers content inside button */
+    gap: 0.35em;
+    padding: 0.75em 1em;
+    padding-right: 1.25em;
+    color: #fff; /* keeps text white */
+    border: 1px solid transparent;
+    font-weight: 700;
+    border-radius: 2em;
+    font-size: 1rem;
+    box-shadow: 0 0.7em 1.5em -0.5em hsla(249, 62%, 51%, 0.745);
+    transition: transform 0.3s, border-color 0.3s;
+    background: linear-gradient(
+        90deg,
+        rgba(77, 54, 208, 1) 0%,
+        rgba(132, 116, 254, 1) 100%
+    );
+    text-decoration: none; /* no underline */
+    margin-top: 20px; /* ensures button sits below select */
+    max-width: 200px; /* keeps button width reasonable */
 }
 
 .button__icon {
-  width: 1.5em;
-  height: 1.5em;
+    width: 1.5em;
+    height: 1.5em;
 }
 
 .button:hover {
-  border-color: #f4f5f2;
+    border-color: #f4f5f2;
+    color: #fff; /* keeps text white on hover */
+    text-decoration: none; /* no underline on hover */
 }
 
 .button:active {
-  transform: scale(0.98);
-  box-shadow: 0 0.5em 1.5em -0.5em hsla(249, 62%, 51%, 0.745);
+    transform: scale(0.98);
+    box-shadow: 0 0.5em 1.5em -0.5em hsla(249, 62%, 51%, 0.745);
 }
