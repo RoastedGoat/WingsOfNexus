@@ -2,6 +2,52 @@
 // Based on Uiverse.io design by JustCode14 - red-dingo-61
 // Implements device preference detection and cookie storage
 
+// Utility functions for cookie management
+function setCookie(name, value, days) {
+    const expires = new Date();
+    expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
+    document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+}
+
+function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+
+// Apply theme immediately to prevent flash
+function applyThemeImmediately() {
+    const savedTheme = getCookie('theme');
+    const root = document.documentElement;
+    
+    if (savedTheme) {
+        if (savedTheme === 'dark') {
+            root.classList.add('dark-theme');
+            root.classList.remove('light-theme');
+        } else {
+            root.classList.add('light-theme');
+            root.classList.remove('dark-theme');
+        }
+    } else {
+        // Use device preference
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            root.classList.add('dark-theme');
+            root.classList.remove('light-theme');
+        } else {
+            root.classList.add('light-theme');
+            root.classList.remove('dark-theme');
+        }
+    }
+}
+
+// Apply theme immediately when script loads
+applyThemeImmediately();
+
 class ThemeToggle {
     constructor() {
         this.themeToggle = null;
@@ -21,7 +67,7 @@ class ThemeToggle {
         
         // Listen for system theme changes
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-            if (!this.getCookie('theme')) {
+            if (!getCookie('theme')) {
                 this.isDark = e.matches;
                 this.updateTheme();
             }
@@ -40,7 +86,7 @@ class ThemeToggle {
 
     setInitialTheme() {
         // Check for saved theme preference
-        const savedTheme = this.getCookie('theme');
+        const savedTheme = getCookie('theme');
         
         if (savedTheme) {
             this.isDark = savedTheme === 'dark';
@@ -55,7 +101,7 @@ class ThemeToggle {
     toggleTheme() {
         this.isDark = !this.isDark;
         this.updateTheme();
-        this.setCookie('theme', this.isDark ? 'dark' : 'light', 365);
+        setCookie('theme', this.isDark ? 'dark' : 'light', 365);
     }
 
     updateTheme() {
@@ -71,23 +117,6 @@ class ThemeToggle {
             root.classList.remove('dark-theme');
             checkbox.checked = false;
         }
-    }
-
-    setCookie(name, value, days) {
-        const expires = new Date();
-        expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
-        document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
-    }
-
-    getCookie(name) {
-        const nameEQ = name + "=";
-        const ca = document.cookie.split(';');
-        for (let i = 0; i < ca.length; i++) {
-            let c = ca[i];
-            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-        }
-        return null;
     }
 
     // Method to add toggle to a specific element
