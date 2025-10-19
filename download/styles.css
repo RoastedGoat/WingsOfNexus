@@ -126,7 +126,7 @@ nav a:hover {
     text-align: center;
     padding: 50px 20px;
     background: url('hero-image.jpg') no-repeat center center/cover;
-    color: #fff;
+    color: var(--text-primary);
 }
 
 .hero h2 {
@@ -320,7 +320,7 @@ input:checked + .slider:before {
     gap: 0.35em;
     padding: 0.75em 1em;
     padding-right: 1.25em;
-    color: #fff; /* keeps text white */
+    color: #ffffff; /* always white text for contrast against dark gradient */
     border: 1px solid #555;
     font-weight: var(--font-weight-semibold);
     font-family: var(--font-family);
@@ -351,7 +351,7 @@ input:checked + .slider:before {
         #505050 100%
     );
     border-color: #666;
-    color: #fff; /* keeps text white on hover */
+    color: #ffffff; /* always white text for contrast against dark gradient */
     text-decoration: none; /* no underline on hover */
     transform: translateY(-2px);
     box-shadow: 0 1em 2em -0.5em rgba(0, 0, 0, 0.5);

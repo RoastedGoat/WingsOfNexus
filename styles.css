@@ -114,7 +114,7 @@ nav a {
     text-align: center;
     padding: 50px 20px;
     background: url('hero-image.jpg') no-repeat center center/cover;
-    color: #fff;
+    color: var(--text-primary);
 }
 .hero h2 {
     font-size: var(--font-size-4xl);
@@ -286,8 +286,8 @@ input:checked + .slider:before {
   display: inline-block;
   background: linear-gradient(to bottom, #2a2a2a, #404040);
  /* Gradient background */
-  color: white;
- /* White text color */
+  color: #ffffff;
+ /* Always white text for contrast against dark gradient */
   font-family: var(--font-family);
  /* Roboto Flex font */
   font-weight: var(--font-weight-semibold);
