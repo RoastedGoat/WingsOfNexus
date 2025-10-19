@@ -1,5 +1,55 @@
+/* Import Roboto Flex from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+/* CSS Custom Properties for Roboto Flex customization */
+:root {
+    --font-family: 'Roboto Flex', Arial, sans-serif;
+    --font-weight-thin: 100;
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --font-weight-black: 900;
+    
+    /* Custom font variations */
+    --font-optical-sizing: auto;
+    --font-style: normal;
+    --font-variant-ligatures: common-ligatures;
+    --font-feature-settings: "liga" 1, "kern" 1;
+    
+    /* Typography scale */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+    
+    /* Line heights */
+    --line-height-tight: 1.25;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.75;
+    
+    /* Letter spacing */
+    --letter-spacing-tight: -0.025em;
+    --letter-spacing-normal: 0;
+    --letter-spacing-wide: 0.025em;
+    --letter-spacing-wider: 0.05em;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-regular);
+    font-optical-sizing: var(--font-optical-sizing);
+    font-feature-settings: var(--font-feature-settings);
+    font-variant-ligatures: var(--font-variant-ligatures);
+    line-height: var(--line-height-normal);
+    letter-spacing: var(--letter-spacing-normal);
     margin: 0;
     padding: 0;
     background: #1a1a2e;
@@ -17,14 +67,21 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 2.5em;
+    font-size: var(--font-size-5xl);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-tight);
+    line-height: var(--line-height-tight);
+    font-optical-sizing: auto;
 }
 
 nav a {
     color: #eaeaea;
     text-decoration: none;
     margin: 0 15px;
-    font-size: 1.2em;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
+    letter-spacing: var(--letter-spacing-wide);
+    transition: all 0.3s ease;
 }
 
 nav a:hover {
@@ -80,11 +137,18 @@ nav a:hover {
 
 .download-section h2 {
     margin: 0 0 15px 0; /* ensures spacing below h2 */
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--letter-spacing-tight);
+    line-height: var(--line-height-tight);
 }
 
 .download-section label {
     display: block; /* ensures label is on its own line */
     margin-bottom: 10px; /* adds space below label */
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
+    letter-spacing: var(--letter-spacing-wide);
 }
 
 .download-section select {
@@ -95,6 +159,9 @@ nav a:hover {
     border: 1px solid #eaeaea;
     border-radius: 4px;
     width: 200px; /* consistent width for alignment */
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-regular);
 }
 
 footer {
@@ -103,12 +170,17 @@ footer {
     background: #16213e;
     color: #eaeaea;
     margin-top: auto;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+    letter-spacing: var(--letter-spacing-normal);
 }
 
 a {
     color: #00aaff;
     text-decoration: underline;
     transition: color 0.3s ease;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: var(--letter-spacing-wide);
 }
 
 a:hover {
@@ -129,9 +201,10 @@ a:hover {
     padding-right: 1.25em;
     color: #fff; /* keeps text white */
     border: 1px solid transparent;
-    font-weight: 700;
+    font-weight: var(--font-weight-semibold);
+    font-family: var(--font-family);
     border-radius: 2em;
-    font-size: 1rem;
+    font-size: var(--font-size-base);
     box-shadow: 0 0.7em 1.5em -0.5em hsla(249, 62%, 51%, 0.745);
     transition: transform 0.3s, border-color 0.3s;
     background: linear-gradient(
@@ -142,6 +215,7 @@ a:hover {
     text-decoration: none; /* no underline */
     margin-top: 20px; /* ensures button sits below select */
     max-width: 200px; /* keeps button width reasonable */
+    letter-spacing: var(--letter-spacing-wide);
 }
 
 .button__icon {

@@ -1,5 +1,55 @@
+/* Import Roboto Flex from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+/* CSS Custom Properties for Roboto Flex customization */
+:root {
+    --font-family: 'Roboto Flex', Arial, sans-serif;
+    --font-weight-thin: 100;
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --font-weight-black: 900;
+    
+    /* Custom font variations */
+    --font-optical-sizing: auto;
+    --font-style: normal;
+    --font-variant-ligatures: common-ligatures;
+    --font-feature-settings: "liga" 1, "kern" 1;
+    
+    /* Typography scale */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+    
+    /* Line heights */
+    --line-height-tight: 1.25;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.75;
+    
+    /* Letter spacing */
+    --letter-spacing-tight: -0.025em;
+    --letter-spacing-normal: 0;
+    --letter-spacing-wide: 0.025em;
+    --letter-spacing-wider: 0.05em;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-regular);
+    font-optical-sizing: var(--font-optical-sizing);
+    font-feature-settings: var(--font-feature-settings);
+    font-variant-ligatures: var(--font-variant-ligatures);
+    line-height: var(--line-height-normal);
+    letter-spacing: var(--letter-spacing-normal);
     margin: 0;
     padding: 0;
     background: #1a1a2e;
@@ -12,13 +62,20 @@ header {
 }
 header h1 {
     margin: 0;
-    font-size: 2.5em;
+    font-size: var(--font-size-5xl);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-tight);
+    line-height: var(--line-height-tight);
+    font-optical-sizing: auto;
 }
 nav a {
     color: #eaeaea;
     text-decoration: none;
     margin: 0 15px;
-    font-size: 1.2em;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
+    letter-spacing: var(--letter-spacing-wide);
+    transition: all 0.3s ease;
 }
 .hero {
     text-align: center;
@@ -27,11 +84,18 @@ nav a {
     color: #fff;
 }
 .hero h2 {
-    font-size: 2.5em;
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--letter-spacing-tight);
+    line-height: var(--line-height-tight);
     margin-bottom: 20px;
+    font-optical-sizing: auto;
 }
 .hero p {
-    font-size: 1.2em;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-relaxed);
+    letter-spacing: var(--letter-spacing-normal);
 }
 .features {
     display: flex;
@@ -49,12 +113,25 @@ nav a {
 }
 .feature h3 {
     margin-top: 0;
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--letter-spacing-tight);
+    line-height: var(--line-height-tight);
+}
+.feature p {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-relaxed);
+    letter-spacing: var(--letter-spacing-normal);
 }
 footer {
     text-align: center;
     padding: 10px;
     background: #16213e;
     color: #eaeaea;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+    letter-spacing: var(--letter-spacing-normal);
 }
 html, body {
     height: 100%;
@@ -70,6 +147,8 @@ a {
     color: #00aaff;
     text-decoration: underline;
     transition: color 0.3s ease;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: var(--letter-spacing-wide);
 }
 
 a:hover {
@@ -84,10 +163,10 @@ a:hover {
  /* Gradient background */
   color: white;
  /* White text color */
-  font-family: "Segoe UI", sans-serif;
- /* Stylish and legible font */
-  font-weight: bold;
-  font-size: 18px;
+  font-family: var(--font-family);
+ /* Roboto Flex font */
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-lg);
  /* Large font size */
   border: none;
  /* No border */
@@ -102,6 +181,7 @@ a:hover {
   animation: button-shimmer 2s infinite;
   transition: all 0.3s ease-in-out;
  /* Smooth transition */
+  letter-spacing: var(--letter-spacing-wide);
 }
 
 /* Hover animation */
@@ -152,12 +232,17 @@ a:hover {
 
 .container h1 {
     font-size: 8rem;
+    font-weight: var(--font-weight-black);
+    letter-spacing: var(--letter-spacing-tight);
     margin: 0;
     color: #eaeaea;
+    font-optical-sizing: auto;
 }
 
 .container p {
-    font-size: 1.2rem;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-relaxed);
     color: #ccc;
 }
 /* Feedback Form Styles */
@@ -182,13 +267,19 @@ a:hover {
     text-align: center;
     margin-bottom: 20px;
     color: #eaeaea;
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-tight);
+    line-height: var(--line-height-tight);
 }
 
 .feedback-form label {
     display: block;
-    font-weight: bold;
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-base);
     margin-bottom: 6px;
     color: #eaeaea;
+    letter-spacing: var(--letter-spacing-wide);
 }
 
 .feedback-form input[type="email"],
@@ -199,10 +290,15 @@ a:hover {
     border-radius: 6px;
     border: 1px solid #ccc;
     box-sizing: border-box; /* makes width consistent */
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-regular);
+    letter-spacing: var(--letter-spacing-normal);
 }
 
 .feedback-form textarea {
     resize: vertical;
+    line-height: var(--line-height-normal);
 }
 
 .feedback-form .radio-group {
@@ -215,8 +311,10 @@ a:hover {
 .feedback-form .radio-group label {
     display: flex;
     align-items: center;
-    font-weight: normal;
+    font-weight: var(--font-weight-regular);
     color: #eaeaea;
+    font-size: var(--font-size-base);
+    letter-spacing: var(--letter-spacing-normal);
 }
 
 .feedback-form .radio-group input {
@@ -230,9 +328,11 @@ a:hover {
     border-radius: 8px;
     background: linear-gradient(to bottom, #1b1c3f, #4a4e91);
     color: white;
-    font-weight: bold;
+    font-weight: var(--font-weight-semibold);
     cursor: pointer;
-    font-size: 16px;
+    font-size: var(--font-size-base);
+    font-family: var(--font-family);
+    letter-spacing: var(--letter-spacing-wide);
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
 }
